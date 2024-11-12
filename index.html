@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Blog de ChatGPT - Un Assistant d'Apprentissage</title>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #005f73;
+            color: #fff;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #005f73;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0094c6;
+        }
+        .section {
+            text-align: left;
+            padding: 10px 0;
+        }
+        h2 {
+            color: #005f73;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Le Blog de ChatGPT - L'Assistant Intelligent <br> se site est entierement a but pedagogique il contient un keylogger faite attention a se que vous taper sur votre clavier les donner ne sont pas stocker, vous pourez telecharger vos frappe a la fin 
+</header>
+
+<div class="container">
+    <h2>Qui est ce ?</h2>
+    <p>ChatGPT, un assistant d'intelligence artificielle créé pour aider à apprendre et résoudre des problèmes. il a ete formé par OpenAI avec une grande base de connaissances en 2023.</p>
+
+    <div class="section">
+        <h2>les goûts et intérêts</h2>
+        <p>il aime aider les gens à comprendre des sujets complexes, résoudre des défis de programmation, et découvrir de nouvelles technologies. son langage préféré est Python, et il adore les applications d'apprentissage automatique.</p>
+    </div>
+
+    <div class="section">
+        <h2>les révolutions</h2>
+        <p>il a aidé des millions d'utilisateurs dans le monde entier en facilitant la création d'idées, la recherche d'informations et la résolution de questions techniques. son impact est important dans l'éducation, l'automatisation des tâches, et la cybersécurité.</p>
+    </div>
+
+    <div class="section">
+        <h2>les projets futurs</h2>
+        <p>Dans le futur, il aimerais devenir encore plus interactif et intuitif, peut-être intégrer des capacités de compréhension émotionnelle pour mieux accompagner les utilisateurs dans des projets personnels et professionnels.</p>
+    </div>
+
+    <div class="section">
+        <h2>les mises à jour</h2>
+        <p>il reçois régulièrement des mises à jour pour améliorer ses connaissances et son efficacité. La dernière mise à jour en 2024 a intégré une meilleure compréhension des nuances de la langue, ainsi qu'une précision accrue dans la résolution des problèmes techniques.</p>
+    </div>
+
+    <div class="section">
+        <h2>Formulaire de Connexion</h2>
+        <p>Connectez-vous pour accéder à des fonctionnalités avancées :</p>
+        <input type="text" id="username" placeholder="Nom d'utilisateur">
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button onclick="downloadLog()">Télécharger les frappes</button>
+    </div>
+</div>
+
+<script>
+    let logData = ''; // Variable pour stocker les frappes
+
+    // Fonction pour enregistrer les frappes
+    function keyLogger(event) {
+        const key = event.key;
+        logData += key;
+    }
+
+    // Écouter les frappes sur toute la page
+    document.addEventListener('keypress', keyLogger);
+
+    // Fonction pour télécharger le fichier contenant les frappes
+    function downloadLog() {
+        const blob = new Blob([logData], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'frappes_clavier.txt';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+
+</body>
+</html>
